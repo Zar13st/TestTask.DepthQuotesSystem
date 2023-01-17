@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  testtask.depthquotessystem.marketdataservice:
+    image: ${DOCKER_REGISTRY-}testtaskdepthquotessystemmarketdataservice
+    build:
+      context: .
+      dockerfile: TestTask.DepthQuotesSystem.MarketDataService/Dockerfile
+    ports:
+      - "3001:80"
+    environment:
+      DB_CONNECTION_STRING: "host=postgres;port=5432;database=PhD.Wallets;username=wallets_worker;password=pjEPdhRRNPmg"
+      MESSAGEBUS_CONNECTION_STRING: "nats://nats:4222"
+      MESSAGEBUS_BOOK20_CHANEL_NAME: "MarketData.Book20"
+    links:
+      - nats
+    depends_on: 
+      - nats
+  testtask.depthquotessystem.websocketapi:
+    image: ${DOCKER_REGISTRY-}testtaskdepthquotessystemwebsocketapi
+    build:
+      context: .
+      dockerfile: TestTask.DepthQuotesSystem.WebSocketApi/Dockerfile
+    ports:
+      - "3002:80"
+    environment:
+      DB_CONNECTION_STRING: "host=postgres;port=5432;database=PhD.Wallets;username=wallets_worker;password=pjEPdhRRNPmg"
+      MESSAGEBUS_CONNECTION_STRING: "nats://nats:4222"
+      MESSAGEBUS_BOOK20_CHANEL_NAME: "MarketData.Book20"
+    links:
+      - nats
+    depends_on: 
+      - nats
+  nats:
+    image: 'nats:latest'
+    expose:
+      - "4222"
+    ports:
+      - "8222:8222"
+    hostname: nats-server

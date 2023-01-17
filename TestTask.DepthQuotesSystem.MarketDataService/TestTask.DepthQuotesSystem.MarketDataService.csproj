@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>af44e402-8648-4b72-adb4-b93378f9f2cc</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.51.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="NATS.Client.Extensions.DependencyInjection" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Communication.Interface\TestTask.DepthQuotesSystem.Communication.Interface.csproj" />
+    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Communication.Nats\TestTask.DepthQuotesSystem.Communication.Nats.csproj" />
+    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Messages\TestTask.DepthQuotesSystem.Messages.csproj" />
+  </ItemGroup>
+
+</Project>
