@@ -3,25 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.MarketDataService", "TestTask.DepthQuotesSystem.MarketDataService\TestTask.DepthQuotesSystem.MarketDataService.csproj", "{F609695E-8FAD-4032-83A5-27BB802D22A3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.WebSocketApi", "TestTask.DepthQuotesSystem.WebSocketApi\TestTask.DepthQuotesSystem.WebSocketApi.csproj", "{5636440D-B6F0-4C83-B8D4-12522742578D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DepthQuotesSystem.MarketDataService", "TestTask.DepthQuotesSystem.MarketDataService\TestTask.DepthQuotesSystem.MarketDataService.csproj", "{F609695E-8FAD-4032-83A5-27BB802D22A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A8BD170C-9E1B-41B1-B51D-D27CD74A3D46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.Tests", "TestTask.DepthQuotesSystem.Tests\TestTask.DepthQuotesSystem.Tests.csproj", "{BF1F8E69-62AB-4037-8B70-D61D21051A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DepthQuotesSystem.Tests", "TestTask.DepthQuotesSystem.Tests\TestTask.DepthQuotesSystem.Tests.csproj", "{BF1F8E69-62AB-4037-8B70-D61D21051A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.FunctionalTests", "TestTask.DepthQuotesSystem.FunctionalTests\TestTask.DepthQuotesSystem.FunctionalTests.csproj", "{77662F54-2B94-4B0B-ABC5-6CB8A8A02DDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DepthQuotesSystem.FunctionalTests", "TestTask.DepthQuotesSystem.FunctionalTests\TestTask.DepthQuotesSystem.FunctionalTests.csproj", "{77662F54-2B94-4B0B-ABC5-6CB8A8A02DDD}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3A9D058A-DBF5-4FD3-8218-4713E0A75138}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{AAEA4B70-2394-4090-9220-BAC2C07A30B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.Communication.Nats", "TestTask.DepthQuotesSystem.Communication.Nats\TestTask.DepthQuotesSystem.Communication.Nats.csproj", "{99DC87FC-AAB8-4B37-AE2F-66C86920B452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DepthQuotesSystem.Communication.Nats", "TestTask.DepthQuotesSystem.Communication.Nats\TestTask.DepthQuotesSystem.Communication.Nats.csproj", "{99DC87FC-AAB8-4B37-AE2F-66C86920B452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.Communication.Interface", "TestTask.DepthQuotesSystem.Communication.Interface\TestTask.DepthQuotesSystem.Communication.Interface.csproj", "{148A580C-9EB5-4D05-9678-B1080DD63DA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DepthQuotesSystem.Communication.Interface", "TestTask.DepthQuotesSystem.Communication.Interface\TestTask.DepthQuotesSystem.Communication.Interface.csproj", "{148A580C-9EB5-4D05-9678-B1080DD63DA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.Messages", "TestTask.DepthQuotesSystem.Messages\TestTask.DepthQuotesSystem.Messages.csproj", "{EABA887E-0145-40DA-B1D5-FA3E7F1BF8BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DepthQuotesSystem.Messages", "TestTask.DepthQuotesSystem.Messages\TestTask.DepthQuotesSystem.Messages.csproj", "{EABA887E-0145-40DA-B1D5-FA3E7F1BF8BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DepthQuotesSystem.OrderBook", "TestTask.DepthQuotesSystem.OrderBook\TestTask.DepthQuotesSystem.OrderBook.csproj", "{EA954049-5327-4518-B013-4C8985DB714A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.DepthQuotesSystem.WebSocketApi", "TestTask.DepthQuotesSystem.WebSocketApi\TestTask.DepthQuotesSystem.WebSocketApi.csproj", "{C46EA981-CA5A-4756-AB93-57E45B76DB91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +35,6 @@ Global
 		{F609695E-8FAD-4032-83A5-27BB802D22A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F609695E-8FAD-4032-83A5-27BB802D22A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F609695E-8FAD-4032-83A5-27BB802D22A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5636440D-B6F0-4C83-B8D4-12522742578D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5636440D-B6F0-4C83-B8D4-12522742578D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5636440D-B6F0-4C83-B8D4-12522742578D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5636440D-B6F0-4C83-B8D4-12522742578D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BF1F8E69-62AB-4037-8B70-D61D21051A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BF1F8E69-62AB-4037-8B70-D61D21051A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF1F8E69-62AB-4037-8B70-D61D21051A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,6 +59,14 @@ Global
 		{EABA887E-0145-40DA-B1D5-FA3E7F1BF8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EABA887E-0145-40DA-B1D5-FA3E7F1BF8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EABA887E-0145-40DA-B1D5-FA3E7F1BF8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA954049-5327-4518-B013-4C8985DB714A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA954049-5327-4518-B013-4C8985DB714A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA954049-5327-4518-B013-4C8985DB714A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA954049-5327-4518-B013-4C8985DB714A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46EA981-CA5A-4756-AB93-57E45B76DB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46EA981-CA5A-4756-AB93-57E45B76DB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46EA981-CA5A-4756-AB93-57E45B76DB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46EA981-CA5A-4756-AB93-57E45B76DB91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

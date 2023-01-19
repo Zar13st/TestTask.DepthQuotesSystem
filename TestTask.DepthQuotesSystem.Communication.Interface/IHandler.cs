@@ -2,5 +2,5 @@
 
 public interface IHandler<in T> where T : class
 {
-    void Process(T message);
+    Task ProcessAsync(T message);
 }

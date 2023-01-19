@@ -1,8 +1,8 @@
 ﻿using TestTask.DepthQuotesSystem.Messages.Enums;
 
-namespace TestTask.DepthQuotesSystem.Messages;
+namespace TestTask.DepthQuotesSystem.OrderBook.BusinessLogic.Imp;
 
-public record Quote
+public record OrderBookLevel
 {
     public decimal Price { get; init; }
 

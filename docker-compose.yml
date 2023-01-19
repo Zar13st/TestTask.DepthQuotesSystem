@@ -9,24 +9,23 @@ services:
     ports:
       - "3001:80"
     environment:
-      DB_CONNECTION_STRING: "host=postgres;port=5432;database=PhD.Wallets;username=wallets_worker;password=pjEPdhRRNPmg"
       MESSAGEBUS_CONNECTION_STRING: "nats://nats:4222"
       MESSAGEBUS_BOOK20_CHANEL_NAME: "MarketData.Book20"
     links:
       - nats
     depends_on: 
       - nats
-  testtask.depthquotessystem.websocketapi:
-    image: ${DOCKER_REGISTRY-}testtaskdepthquotessystemwebsocketapi
+  testtask.depthquotessystem.orderbook:
+    image: ${DOCKER_REGISTRY-}testtaskdepthquotessystemorderbook
     build:
       context: .
-      dockerfile: TestTask.DepthQuotesSystem.WebSocketApi/Dockerfile
+      dockerfile: TestTask.DepthQuotesSystem.OrderBook/Dockerfile
     ports:
       - "3002:80"
     environment:
-      DB_CONNECTION_STRING: "host=postgres;port=5432;database=PhD.Wallets;username=wallets_worker;password=pjEPdhRRNPmg"
       MESSAGEBUS_CONNECTION_STRING: "nats://nats:4222"
       MESSAGEBUS_BOOK20_CHANEL_NAME: "MarketData.Book20"
+      MESSAGEBUS_ORDERBOOK_SNAPSHOOT_CHANEL_NAME: "OrderBook.Snapshot"
     links:
       - nats
     depends_on: 

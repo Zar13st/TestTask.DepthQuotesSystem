@@ -2,7 +2,7 @@
 
 namespace TestTask.DepthQuotesSystem.Messages;
 
-public record Quote
+public record Level
 {
     public decimal Price { get; init; }
 

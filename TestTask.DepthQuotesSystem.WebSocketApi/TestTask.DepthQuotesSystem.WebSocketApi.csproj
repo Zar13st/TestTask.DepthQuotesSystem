@@ -4,24 +4,16 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>fc7d0c3f-f447-4b13-916e-65a695da7818</UserSecretsId>
+    <UserSecretsId>2dbb4981-ce3e-4888-bee9-d104dabef5bb</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.51.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
-    <PackageReference Include="NATS.Client" Version="1.0.2" />
-    <PackageReference Include="NATS.Client.Extensions.DependencyInjection" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Communication.Nats\TestTask.DepthQuotesSystem.Communication.Nats.csproj" />
-    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Messages\TestTask.DepthQuotesSystem.Messages.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

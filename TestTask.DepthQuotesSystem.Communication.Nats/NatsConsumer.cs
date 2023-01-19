@@ -28,21 +28,27 @@ public class NatsConsumer
             .Where(m => m.Data?.Any() == true)
             .Select(m => m.Data);
 
-        messages.Subscribe(m =>
+        messages.Subscribe(async m =>
         {
-            var plainTextMessage = Encoding.UTF8.GetString(m);
+            try
+            {
+                var plainTextMessage = Encoding.UTF8.GetString(m);
 
-            var handler = _serviceProvider.GetRequiredService<IHandler<T>>();
+                var handler = _serviceProvider.GetRequiredService<IHandler<T>>();
 
-            var msg = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(plainTextMessage);
+                var msg = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(plainTextMessage);
 
-            handler.Process(msg);
-
+                await handler.ProcessAsync(msg);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, e.Message);
+            }
         }, OnError);
     }
 
-    private void OnError(Exception obj)
+    private void OnError(Exception e)
     {
-        _logger.LogError(obj.ToString());
+        _logger.LogError(e, e.Message);
     }
 }
