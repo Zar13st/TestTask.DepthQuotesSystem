@@ -30,6 +30,20 @@ services:
       - nats
     depends_on: 
       - nats
+  testtask.depthquotessystem.websocketapi:
+    image: ${DOCKER_REGISTRY-}testtaskdepthquotessystemwebsocketapi
+    build:
+      context: .
+      dockerfile: TestTask.DepthQuotesSystem.WebSocketApi/Dockerfile
+    ports:
+      - "3003:80"
+    environment:
+      MESSAGEBUS_CONNECTION_STRING: "nats://nats:4222"
+      MESSAGEBUS_ORDERBOOK_SNAPSHOOT_CHANEL_NAME: "OrderBook.Snapshot"
+    links:
+      - nats
+    depends_on: 
+      - nats
   nats:
     image: 'nats:latest'
     expose:

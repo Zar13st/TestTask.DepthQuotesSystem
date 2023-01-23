@@ -4,5 +4,5 @@ public record OrderBookSnapShot
 {
     public string Symbol { get; init; }
 
-    public List<Level> Levels { get; init; }
+    public List<OrderBookLevel> Levels { get; init; }
 }

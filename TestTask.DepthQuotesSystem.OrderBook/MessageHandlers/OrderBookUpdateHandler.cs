@@ -18,7 +18,7 @@ public class OrderBookUpdateHandler : IHandler<OrderBookUpdate>
 
     public async Task ProcessAsync(OrderBookUpdate message)
     {
-        _logger.LogWarning($"{nameof(OrderBookUpdateHandler)} {message}");
+        _logger.LogInformation($"{nameof(OrderBookUpdateHandler)} {message}");
 
         _orderBookService.Process(message);
     }

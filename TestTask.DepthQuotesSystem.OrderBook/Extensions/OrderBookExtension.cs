@@ -1,13 +1,14 @@
 ﻿using TestTask.DepthQuotesSystem.Messages;
 using TestTask.DepthQuotesSystem.OrderBook.BusinessLogic.Imp;
+using OrderBookLevel = TestTask.DepthQuotesSystem.Messages.OrderBookLevel;
 
 namespace TestTask.DepthQuotesSystem.OrderBook.Extensions;
 
 public static class OrderBookExtension
 {
-    public static OrderBookLevel ToOrderBookLevel(this Quote quote)
+    public static BusinessLogic.Imp.OrderBookLevel ToOrderBookLevel(this Quote quote)
     {
-        return new OrderBookLevel
+        return new BusinessLogic.Imp.OrderBookLevel
         {
             Price = quote.Price,
             Quantaty = quote.Quantaty,
@@ -15,7 +16,7 @@ public static class OrderBookExtension
         };
     }
 
-    public static OrderBookSnapShot ToSnapshot(this string symbol, IEnumerable<OrderBookLevel> levels)
+    public static OrderBookSnapShot ToSnapshot(this string symbol, IEnumerable<BusinessLogic.Imp.OrderBookLevel> levels)
     {
         return new OrderBookSnapShot
         {
@@ -24,9 +25,9 @@ public static class OrderBookExtension
         };
     }
 
-    public static Level ToDto(this OrderBookLevel level)
+    public static OrderBookLevel ToDto(this BusinessLogic.Imp.OrderBookLevel level)
     {
-        return new Level
+        return new OrderBookLevel
         {
             Price = level.Price,
             Quantaty = level.Quantaty,

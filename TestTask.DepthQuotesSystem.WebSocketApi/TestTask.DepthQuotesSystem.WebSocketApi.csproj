@@ -10,10 +10,18 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="NATS.Client.Extensions.DependencyInjection" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="MessageHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Communication.Interface\TestTask.DepthQuotesSystem.Communication.Interface.csproj" />
+    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Communication.Nats\TestTask.DepthQuotesSystem.Communication.Nats.csproj" />
+    <ProjectReference Include="..\TestTask.DepthQuotesSystem.Messages\TestTask.DepthQuotesSystem.Messages.csproj" />
   </ItemGroup>
 
 </Project>

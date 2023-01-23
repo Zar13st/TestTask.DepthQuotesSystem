@@ -41,7 +41,7 @@ public class OrderBookService : IOrderBookService
             return new OrderBookSnapShot
             {
                 Symbol = symbol,
-                Levels = new List<Level>()
+                Levels = new List<Messages.OrderBookLevel>()
             };
         }
     }

@@ -1,8 +1,18 @@
+using TestTask.DepthQuotesSystem.Communication.Nats;
+using TestTask.DepthQuotesSystem.Messages;
+using TestTask.DepthQuotesSystem.OrderBook;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var config = new ServiceConfig
+{
+    OrderBookSnapshotChannel = builder.Configuration["MESSAGEBUS_ORDERBOOK_SNAPSHOOT_CHANEL_NAME"],
+    BusConnectionString = builder.Configuration["MESSAGEBUS_CONNECTION_STRING"],
+};
 
 builder.Services.AddControllers();
+
+
 
 var app = builder.Build();
 
@@ -14,4 +24,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+using (var scope = app.Services.CreateScope())
+{
+    var consumer = scope.ServiceProvider.GetRequiredService<NatsConsumer>();
+    consumer.Suscribe<OrderBookSnapShot>(config.BusConnectionString, config.OrderBookSnapshotChannel);
+}
+
+await app.RunAsync();
